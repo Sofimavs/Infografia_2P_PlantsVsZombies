@@ -277,6 +277,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: plant
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 63
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05a4d5438080174888179e72c699c23
+      internalID: 1323070022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -288,6 +309,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      plant: 1323070022
       sunflower_2: -1647632690
       sunflower_3: 1399614987
       sunflower_4: 1895218678

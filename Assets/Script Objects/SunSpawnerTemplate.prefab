@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSunFlower: 1
-  minTime: 3
-  maxTime: 7
+  minTime: 10
+  maxTime: 15
   spawnTime: 0
   sun: {fileID: 6626982402943667131, guid: 304951735cd781c44a4b0f57b370fa7b, type: 3}
   minPos: {x: 0, y: 0}

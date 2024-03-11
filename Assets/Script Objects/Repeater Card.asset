@@ -17,14 +17,15 @@ MonoBehaviour:
   plantSprite: {fileID: 258427777, guid: 01f550c2f2b149041820359d42959367, type: 3}
   zombieLayer:
     serializedVersion: 2
-    m_Bits: 0
-  Bullet: {fileID: 0}
+    m_Bits: 8
+  Bullet: {fileID: 7850682320620953430, guid: 2f9f981b7bc8a9e458e3a6a5b88114f4, type: 3}
   cost: 200
-  cooldown: 3
+  cooldown: 8
   isSunFlower: 0
   sunSpawnerTemplate: {fileID: 0}
-  health: 150
-  damage: 25
-  range: 100
-  speed: 0.5
-  fireRate: 2
+  health: 200
+  damage: 15
+  range: 500
+  speed: 1
+  fireRate: 1
+  myname: Repeater

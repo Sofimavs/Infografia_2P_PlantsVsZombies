@@ -17,4 +17,6 @@ public class PlantCardScrOb : ScriptableObject
     public float range;
     public float speed;
     public float fireRate;
+
+    public string myname;
 }

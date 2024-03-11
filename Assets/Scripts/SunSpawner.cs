@@ -22,13 +22,13 @@ public class SunSpawner : MonoBehaviour
         {
             pos.x = Random.Range(minPos.x, maxPos.x);
             pos.y = Random.Range(minPos.y, maxPos.y);
-            pos.z = -1;
+            pos.z = 0;
         }
         else
         {
             pos.x = 0;
             pos.y = 0;
-            pos.z = -1;
+            pos.z = 0;
         }
  
         StartCoroutine(SpawnSun());
@@ -45,18 +45,18 @@ public class SunSpawner : MonoBehaviour
         {
             pos.x = Random.Range(minPos.x, maxPos.x);
             pos.y = Random.Range(minPos.y, maxPos.y);
-            pos.z = -1;
+            pos.z = 0;
         }
         else
         {
             Destroy(SunObject.GetComponent<Rigidbody2D>());
             pos.x = 0;
             pos.y = 0;
-            pos.z = -1;
+            pos.z = 0;
 
-            SunObject.transform.position = new Vector3(0,0,0);
+            SunObject.transform.position = new Vector3((float)0.1, (float)-0.1,0);
             SunObject.transform.parent = this.transform;
-            SunObject.transform.localPosition = new Vector3(0, 0, 0);
+            SunObject.transform.localPosition = new Vector3((float)0.1, (float)-0.1, 0);
         }
         StartCoroutine(SpawnSun());
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
@@ -14,12 +15,19 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     public bool isOverSlot = false;
     GameObject plant;
     bool isHoldingPlant;
+    public bool isDisabled;
+
+    public Image enabledImage;
+    public Image loadImage;
+
+    [Tooltip("X: MaxH, Y: MinH")]
+    public Vector2 height;
 
     public bool isCoolingDown;
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(isCoolingDown)
+        if(isCoolingDown || isDisabled)
         {
             return;
         }
@@ -53,7 +61,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (isCoolingDown)
+        if (isCoolingDown || isDisabled)
         {
             return;
         }
@@ -76,7 +84,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     }
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (isCoolingDown)
+        if (isCoolingDown || isDisabled)
         {
             return;
         }
@@ -121,8 +129,33 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
     public IEnumerator cardCoolDown(float cooldownDuration)
     {
         isCoolingDown = true;
-        yield return new WaitForSeconds(cooldownDuration);
+
+        for(float i = height.x; i <=height.y; i++) 
+        {
+            loadImage.rectTransform.anchoredPosition=new Vector3(0,i,0);
+
+            yield return new WaitForSeconds(cooldownDuration/height.y);
+        }
         isCoolingDown = false;
+    }
+
+    public void updateCardStatus()
+    {
+        if (GameObject.FindObjectOfType<GameManager>().SunAmnt >= plantCardScrOb.cost)
+        {
+            isDisabled = false;
+            enabledImage.rectTransform.anchoredPosition = new Vector3(0, height.y, 0);
+        }
+        else
+        {
+            isDisabled = true;
+            enabledImage.rectTransform.anchoredPosition = new Vector3(0, height.x, 0);
+        }
+    }
+
+    public void StartLoad()
+    {
+        StartCoroutine(cardCoolDown(plantCardScrOb.cooldown));
     }
 
 }

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//[RequireComponent(typeof(AudioSource))]
-//[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Animator))]
 public class ZombieController : MonoBehaviour
 {
     public ZombieScrOb thisZombieSO;
@@ -24,13 +23,12 @@ public class ZombieController : MonoBehaviour
     public bool isAttacking;
 
     //[Tooltip("Index 0: Normal Zombie, Index 1: Cone HeadZombie")]
-    //public List<AudioClip> damageAudio;
     public float damageDelay = 2f;
 
-    bool isDying;
+    public bool isDying;
 
-    //[Header("Animator Parameters")]
-    //public bool isWalking;
+    [Header("Animator Parameters")]
+    public bool isWalking;
 
     private void Start()
     {
@@ -52,19 +50,30 @@ public class ZombieController : MonoBehaviour
 
         if(!isAttacking && !isDying)
         {
+            isWalking = true;
+            this.GetComponent<Animator>().SetBool("isWalking", isWalking);
             this.transform.position += Vector3.left*speed*Time.deltaTime;
         }
         else
         {
+            isWalking = false;
             this.transform.position = this.transform.position;
         }
 
         if(currentHealth <= 0)
         {
-            isDying = true;
             //Dead
-            Destroy(this.gameObject);
+            StartCoroutine(Dies());
+            
         }
+    }
+
+    public IEnumerator Dies()
+    {
+        isDying = true;
+        this.GetComponent<Animator>().SetBool("isDying", isDying);
+        yield return new WaitForSeconds(1);
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -87,15 +96,15 @@ public class ZombieController : MonoBehaviour
 
     public IEnumerator Attack()
     {
-        //isWalking = false;
+        isWalking = false;
 
-        if(target != null)
+        this.GetComponent<Animator>().SetBool("isWalking", isWalking);
+        this.GetComponent<Animator>().SetTrigger("Eat");
+        if (target != null)
         {
             target.GetComponent<PlantManager>().Damage(damage);
         }
-        //this.GetComponent<Animator>().SetBool("IsWalking", isWalking);
-        //this.GetComponent<Animator>().SetTrigger("Attack");
-
+        
         yield return new WaitForSeconds(attackInterval);
 
         if (target != null)
