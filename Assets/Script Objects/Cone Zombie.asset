@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b6ecc94e6644243ac2e6164c24cbe8, type: 3}
+  m_Name: Cone Zombie
+  m_EditorClassIdentifier: 
+  zombieDefault: {fileID: 7627875738719972664, guid: d21675a0247d66142b58a637b39cad78, type: 3}
+  zombieAccessory: {fileID: 4050234838551951322, guid: 5fc4120fd010a5d45ba29287bf3cb7fb, type: 3}
+  accessoryHealth: 50
+  zombieHealth: 100
+  zombieHandHealth: 20
+  zombieDamage: 15
+  zombieSpeed: 0.5
+  attackInterval: 1

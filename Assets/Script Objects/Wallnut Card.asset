@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b562a6f6072e842ae4b143222e63d4, type: 3}
+  m_Name: Wallnut Card
+  m_EditorClassIdentifier: 
+  plantCard_active: {fileID: -798857948, guid: 88987e2fae617e849932a27ea8a47f0b, type: 3}
+  plantCard_inactive: {fileID: 1899744660, guid: 88987e2fae617e849932a27ea8a47f0b, type: 3}
+  plantSprite: {fileID: 96948561, guid: 88987e2fae617e849932a27ea8a47f0b, type: 3}
+  zombieLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Bullet: {fileID: 0}
+  cost: 50
+  cooldown: 0
+  isSunFlower: 0
+  sunSpawnerTemplate: {fileID: 0}
+  health: 0
+  damage: 0
+  range: 0
+  speed: 0
+  fireRate: 0

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b562a6f6072e842ae4b143222e63d4, type: 3}
+  m_Name: Repeater Card
+  m_EditorClassIdentifier: 
+  plantCard_active: {fileID: -840947157, guid: 01f550c2f2b149041820359d42959367, type: 3}
+  plantCard_inactive: {fileID: -365815439, guid: 01f550c2f2b149041820359d42959367, type: 3}
+  plantSprite: {fileID: 258427777, guid: 01f550c2f2b149041820359d42959367, type: 3}
+  zombieLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  Bullet: {fileID: 0}
+  cost: 200
+  cooldown: 3
+  isSunFlower: 0
+  sunSpawnerTemplate: {fileID: 0}
+  health: 150
+  damage: 25
+  range: 100
+  speed: 0.5
+  fireRate: 2
