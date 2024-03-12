@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeadLineManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class DeadLineManager : MonoBehaviour
         if (collision.tag == "Zombie")
         {
             Debug.Log("Died!");
+            SceneManager.LoadScene("LostScene");
+            //stoping game
         }
     }
 }

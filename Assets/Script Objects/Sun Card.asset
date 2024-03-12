@@ -20,7 +20,7 @@ MonoBehaviour:
     m_Bits: 0
   Bullet: {fileID: 0}
   cost: 50
-  cooldown: 3
+  cooldown: 4
   isSunFlower: 1
   sunSpawnerTemplate: {fileID: 6700188728282944717, guid: b4ee3fd24bbb62e48aaa1525193e2d22, type: 3}
   health: 150
@@ -28,3 +28,4 @@ MonoBehaviour:
   range: 0
   speed: 0
   fireRate: 0
+  myname: 
